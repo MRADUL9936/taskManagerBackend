@@ -12,7 +12,9 @@ app.use(express.json())
 
 //routes
 app.use('/Tasks',taskRouter)
-
+app.get('/',(req,res)=>{
+    res.send("Welcome to Task Manager API")
+})
 
 connectToMongoDb().then(()=>{
 
