@@ -12,6 +12,9 @@ app.use(express.json())
 
 //routes
 app.use('/Tasks',taskRouter)
+app.get('/health',(req,res)=>{
+    res.status(200).json({healthy:"server is healthy"})
+})
 
 connectToMongoDb().then(()=>{
 
